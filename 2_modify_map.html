@@ -89,7 +89,7 @@ p {
     
     <script>
         // Initialize the map, center it on UMD campus, and set the zoom level
-        		const map = L.map('map').setView([46.7867, -92.1005], 12);
+      const map = L.map('map').setView([46.7867, -92.1005], 12);
 
         // Add Esri Satellite tiles
         const tiles = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
@@ -101,8 +101,6 @@ p {
         tiles.addTo(map);
 
         // add marker at Hartley Nature Center
-        const hartleyMarker = L.marker([46.835, -92.089]).addTo(map);
-        hartleyMarker.bindPopup("<b>Hartley Nature Center</b><br>A great place to hike and see wildlife!").openPopup();
 
 
         // Add a marker for the UMD campus
