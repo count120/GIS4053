@@ -68,6 +68,19 @@
         // Add a marker for the UMD campus
         const marker = L.marker([46.82, -92.085]).addTo(map);
         marker.bindPopup("<b>University of Minnesota Duluth</b><br>A great place to learn about GIS!").openPopup();
+
+		L.marker([46.7867, -92.1005]).addTo(map)
+    .bindPopup("<b>Canal Park</b><br>Super popular spot with the lift bridge.");
+
+        L.marker([46.8147, -92.1076]).addTo(map)
+         .bindPopup("<b>Enger Tower</b><br>Best view of Duluth if you climb it.");
+
+       L.marker([46.8600, -92.0300]).addTo(map)
+         .bindPopup(`
+        <b>Brighton Beach</b><br>
+        Chill place to watch waves.<br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Brighton_Beach_Duluth.jpg/320px-Brighton_Beach_Duluth.jpg" width="200">
+    `);
     </script>
 </body>
 </html>
