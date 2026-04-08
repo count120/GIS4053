@@ -25,12 +25,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Most Basic Web Map</title>
+    <title>Landmarks of Duluth</title>
     
     <!-- Leaflet CSS stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
     <style>
+
+		body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f7;
+    text-align: center;
+}
+
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+}
+
+h1 {
+    margin: 5px;
+}
+
+h2 {
+    margin: 5px;
+    font-weight: normal;
+}
+
+p {
+    width: 65%;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+#map {
+    height: 550px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
 
         /* full page leaflet map */
         
@@ -39,10 +75,14 @@
 <body>
     <!-- Header at the top of the page -->
     <div class="header">
-        <h1>A Mostly Basic Web Map</h1>
-        <h3>by: Your Name Here</h3>
+       <h1>Maria's Favorite Spots in Duluth</h1>
+         <h3>by: Maria Counts</h3>
+           <p>This map shows some of my favorite places around Duluth that I like to go to. 
+            I picked locations that have good views, are relaxing, or are just fun to visit. 
+             Each spot has something unique about it, like hiking, scenery, or being near the water.
+            </p> 
     </div>
-    <div id="map" style="width: 600px; height: 400px;"></div>
+   <div id="map"></div>
     
     <!-- Leaflet JavaScript library -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -52,7 +92,7 @@
         const map = L.map('map').setView([46.82, -92.08], 13);
 
         // Add Esri Satellite tiles
-        const tiles = L.tileLayer(''https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        const tiles = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
 });
@@ -60,14 +100,15 @@
         // add tiles to the map
         tiles.addTo(map);
 
+		const map = L.map('map').setView([46.7867, -92.1005], 12);
+
         // add marker at Hartley Nature Center
         const hartleyMarker = L.marker([46.835, -92.089]).addTo(map);
         hartleyMarker.bindPopup("<b>Hartley Nature Center</b><br>A great place to hike and see wildlife!").openPopup();
 
 
         // Add a marker for the UMD campus
-        const marker = L.marker([46.82, -92.085]).addTo(map);
-        marker.bindPopup("<b>University of Minnesota Duluth</b><br>A great place to learn about GIS!").openPopup();
+        
 
 		L.marker([46.7867, -92.1005]).addTo(map)
     .bindPopup("<b>Canal Park</b><br>Super popular spot with the lift bridge.");
